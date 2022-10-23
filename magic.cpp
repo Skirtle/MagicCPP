@@ -4,8 +4,8 @@
 
 Card::Card() { 
     this->name = "";
-    //this->types = std::vector<Type>;
-    //this->colors = std::vector<Color>;
+    this->types;
+    this->colors;
 }
 
 Permanent::Permanent() { 
