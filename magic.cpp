@@ -4,8 +4,8 @@
 
 Card::Card() { 
     this->name = "";
-    this->types;
-    this->colors;
+    //this->types;
+    //this->colors;
 }
 
 Permanent::Permanent() { 
