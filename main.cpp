@@ -2,8 +2,13 @@
 
 int main() {
     Card bear = Card();
-    bear.name = "Grizzly Bears";
+    bear.setName("Grizzly Bears");
+    bear.setColors(std::vector<Color> {Green});
     // bear.types = Type::Creature;
-    std::cout << bear.name << " - " << std::endl;
+    std::cout << bear.getName() << " - [";
+    for (int i = 0; i < bear.getColors().size(); i++) {
+        std::cout << bear.getColors()[i] << " ";
+    }
+    std::cout << "]\n";
     return 0;
 }
