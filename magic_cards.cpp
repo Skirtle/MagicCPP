@@ -10,7 +10,38 @@ std::vector<std::string> Card::getColors() {return this->colors; }
 std::string Card::getName() {return this->name; }
 void Card::setTypes(std::vector<std::string> types) {this->types = types; }
 void Card::setColors(std::vector<std::string> colors) {this->colors = colors; }
-void Card::setName(std::string name) {this->name = name; }
+void Card::setName(std::string s_name) {this->name = s_name; }
+
+Spell::Spell() { this->cmc = 0; this->mv = "";}
+void Spell::setMV(std::string t_mv) {
+    this->mv = t_mv;
+    
+    int col = 0, gen = 0;
+    for (int i = 0; i < t_mv.length(); i++) {
+        // Counts amount of colored symbols
+        // TODO - Add ability to account for phyrexian and hybrid mana types
+
+        char c = t_mv.at(i);
+        if (isalpha(c)) {
+            col++;
+
+            // Getting card colors
+            bool found = false;
+            for (int j = 0; j < this->colors.size(); j++) {
+                if (std::string(1, c) == this->colors.at(j))
+                found = true;
+                break;
+            }
+
+            if (!found) this->colors.push_back(std::string(1,c));
+        }
+        // Converts char number into int number
+        else gen = gen * 10 + (int(c) - 48);
+    }
+
+    this->cmc = col + gen;
+}
+std::string Spell::getMV() { return this->mv; }
 
 Permanent::Permanent() { 
     this->isTapped = false;

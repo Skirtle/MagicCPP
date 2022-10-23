@@ -10,16 +10,26 @@ public:
     std::string getName();
     void setTypes(std::vector<std::string> types);
     void setColors(std::vector<std::string> colors);
-    void setName(std::string name);
+    void setName(std::string s_name);
     Card();
-private:
+protected:
     std::vector<std::string> types;
     std::vector<std::string> colors;
     std::string name;
 };
 
-class Permanent : public Card {
-private:
+class Spell : virtual public Card {
+protected:
+    int cmc;
+    std::string mv;
+public:
+    void setMV(std::string t_mv);
+    std::string getMV();
+    Spell();
+};
+
+class Permanent : virtual public Card {
+protected:
     bool isTapped;
     bool isFlipped;
     bool isFaceDown;
@@ -29,8 +39,8 @@ public:
     Permanent();
 };
 
-class Creature : public Permanent {
-private:
+class Creature : public Permanent, public Spell {
+protected:
     int power, toughness, damageMarked;
 public:
     void setPower(int p);
@@ -40,6 +50,10 @@ public:
     int getToughness();
     int getDamage();
     Creature();
+};
+
+class Land : public Permanent {
+
 };
 
 
