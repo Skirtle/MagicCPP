@@ -16,6 +16,7 @@ Spell::Spell() { this->cmc = 0; this->mv = "";}
 void Spell::setMV(std::string t_mv) {
     this->mv = t_mv;
     
+    // Go through input mana value and for get the generic vs. colored mana values
     int col = 0, gen = 0;
     for (int i = 0; i < t_mv.length(); i++) {
         // Counts amount of colored symbols
@@ -33,6 +34,7 @@ void Spell::setMV(std::string t_mv) {
                 break;
             }
 
+            // Set color of card based on mana value
             if (!found) this->colors.push_back(std::string(1,c));
         }
         // Converts char number into int number
