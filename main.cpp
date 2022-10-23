@@ -1,16 +1,22 @@
 #include <iostream>
 #include "magic_cards.hpp"
+#include "magic_player.hpp"
+#include "magic_game.hpp"
 
 int main() {
     Creature bear = Creature();
-
-    int p = 2, t = 2, d = 0;
     bear.setName("Grizzly Bears");
-    bear.setColors(std::vector<std::string> {"Green"});
-    bear.setTypes(std::vector<std::string> {"Creature", "Bear"});
-    bear.setPower(p);
-    bear.setToughness(t);
+    bear.setPower(2);
+    bear.setToughness(2);
+    Creature cat = Creature();
+    cat.setName("Sanctuary Cat");
+    cat.setPower(2);
+    cat.setToughness(1);
 
-    std::cout << bear.getName() << " - " << bear.getPower() << "/" << bear.getToughness() << std::endl;
+    Player dalton = Player();
+    dalton.name = "Dalton";
+    Player shawn = Player();
+    shawn.name = "Shawn";
+
     return 0;
 }
