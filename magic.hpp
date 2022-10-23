@@ -3,28 +3,18 @@
 #include <iostream>
 #include <vector>
 
-enum Type {
-    Creature, Land, Artifact, Enchantment, Instant, Sorcery, Planeswalker, Dungeon, Tribal
-};
-
-enum Color {
-    White, Blue, Black, Red, Green
-};
-
-
-
 class Card {
 public:
-    std::vector<Type> getTypes();
-    std::vector<Color> getColors();
+    std::vector<std::string> getTypes();
+    std::vector<std::string> getColors();
     std::string getName();
-    void setTypes(std::vector<Type> types);
-    void setColors(std::vector<Color> colors);
+    void setTypes(std::vector<std::string> types);
+    void setColors(std::vector<std::string> colors);
     void setName(std::string name);
     Card();
 private:
-    std::vector<Type> types;
-    std::vector<Color> colors;
+    std::vector<std::string> types;
+    std::vector<std::string> colors;
     std::string name;
 };
 
@@ -35,6 +25,22 @@ private:
     bool isFaceDown;
     bool isPhasedOut;
     bool isToken;
+public:
     Permanent();
 };
+
+class Creature : public Permanent {
+private:
+    int power, toughness, damageMarked;
+public:
+    void setPower(int p);
+    void setToughness(int t);
+    void setDamage(int d);
+    int getPower();
+    int getToughness();
+    int getDamage();
+    Creature();
+};
+
+
 #endif
