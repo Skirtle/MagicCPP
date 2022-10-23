@@ -1,5 +1,5 @@
-#ifndef MAGIC_H
-#define MAGIC_H
+#ifndef MAGIC_CARDS_H
+#define MAGIC_CARDS_H
 #include <iostream>
 #include <vector>
 

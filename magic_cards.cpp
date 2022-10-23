@@ -1,4 +1,4 @@
-#include "magic.hpp"
+#include "magic_cards.hpp"
 #include <iostream>
 #include <vector>
 

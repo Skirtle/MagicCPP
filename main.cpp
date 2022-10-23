@@ -1,5 +1,5 @@
 #include <iostream>
-#include "magic.hpp"
+#include "magic_cards.hpp"
 
 int main() {
     Creature bear = Creature();
