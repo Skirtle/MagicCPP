@@ -9,6 +9,7 @@ private:
     std::vector<Card> graveyard;
     std::vector<Card> exile;
     std::vector<Card> battlefield;
+    int lifeTotal;
 public:
     std::string name;
     int getHandSize();
