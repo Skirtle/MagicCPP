@@ -1,8 +1,8 @@
 #include "magic_game.hpp"
 
 
-Game::Game() {this->players = (Player*) malloc(sizeof(Player) * 2); }
-Game::~Game() {free(this->players); }
+Game::Game() { this->players = (Player*) malloc(sizeof(Player) * 2); }
+Game::~Game() { free(this->players); }
 void Game::setPlayers(std::vector<std::string> t_players) {
     // Resets the game
     free(this->players);
